@@ -1,0 +1,12 @@
+{
+  "name": "kreslenie",
+  "version": "1.7.9",
+  "description": "KreslimeHype",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "JurajMarticek",
+  "license": "ISC"
+}

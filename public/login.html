@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login stránka pre Kreslenie</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+	  <script src="libraries/p5.dom.js" type="text/javascript"></script>
+	  <script src="login.js" type="text/javascript"></script>
+	  <link rel="stylesheet" href="style.css">
+    
+    
+
+    
+  </head>
+  <body>
+	  
+	  <div class="wrapper">
+		  <img style="float:left" src="img/login.gif" >
+		  <table id="tabulka"  cellpadding="3px" cellspacing="0px" >
+	  <tr id="riadok1">
+		 <th>
+		  Pripojení :  
+		  </th>
+	  </tr >
+	  
+	  </table>
+	  <div style="clear:both"></div>
+		   <br>
+	  <div>
+	 <input type="text" id="meno" onkeydown="if (event.keyCode == 13){ login()}" onkeypress="return event.keyCode != 13;">
+	  <button onclick="login()" title="login" >Prihlásenie</button> 
+	 
+<!--	  <button onclick="list()" title="list" >Zobraziť pripojených</button>-->
+	  <p id="chybove" >Meno používateľa existuje alebo nie je povolené !!!</p>
+	  
+	  
+	  </div>
+	  
+	  <script> 
+		
+		
+		 var meno = document.getElementById("meno").value;
+		socket.on('chyba', function(){
+			document.getElementById("chybove").style.display = "initial";
+		});
+	  socket.on('tabulkaUpdate', function(menoCloveka){
+		var tabulka = document.getElementById("tabulka");
+		var bunka = document.createElement("td");
+		var riadok = document.createElement("tr");
+		var riadokText = document.createTextNode(menoCloveka);
+		 bunka.appendChild(riadokText);
+		 riadok.appendChild(bunka);
+		 tabulka.appendChild(riadok);		
+	});
+	  </script>
+	  <div style="clear:both"></div>
+	  </div>
+  </body>
+</html>

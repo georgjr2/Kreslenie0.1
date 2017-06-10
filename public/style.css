@@ -1,0 +1,34 @@
+/* stylesheet */
+
+	 
+body {
+	font-family: sans-serif;
+}
+
+button {
+	border: 0;
+	height: 20px;
+}
+
+#chybove {
+	color:red;
+	display:none;
+}
+td {
+	text-align: right;
+	
+}
+table {
+	float: right;
+}
+
+
+.wrapper {
+	margin: 0 auto;
+	width: 600px;
+}
+
+#tabulka {
+	color: white;
+	background-color: rgb(150, 200, 112);
+}
